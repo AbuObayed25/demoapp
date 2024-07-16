@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(IntroApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class IntroApp extends StatelessWidget {
+  const IntroApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Home(),
+      title: 'Intro app',
     );
   }
 }
@@ -23,43 +24,175 @@ class Home extends StatelessWidget {
     return ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text(message)));
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Colors.green,
       appBar: AppBar(
-        backgroundColor: Colors.pinkAccent,
-        title: Text(
-          "Food Mama",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(
-              onPressed: () {
-                MySnackBar("No data found", context);
-              },
-              icon: Icon(Icons.notifications)),
+          IconButton(onPressed: (){MySnackBar('No data found', context);}, icon: Icon(Icons.notifications))
+
+        ],
+        title: Text('Home'),
+        backgroundColor: Colors.blue,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+            Text('Hi This is Obayed'),
+            Text('Hi This is Abu'),
+            Text('Hi This is Anoy'),
+
+            ElevatedButton(
+              onPressed: () {MySnackBar('Data is Updated', context);},
+              child: Text('Click here now please'),
+            ),
+          ],
+        ),
+      ),
+      //   body: SingleChildScrollView(
+      //     scrollDirection: Axis.horizontal,
+      //     child: Row(
+      //       //Horizontally
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       crossAxisAlignment: CrossAxisAlignment.center,
+      //       children: [
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //         Text('Hello vai'),
+      //       ],
+      //     ),
+      // ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedFontSize: 15,
+        unselectedFontSize: 13,
+        selectedItemColor: Colors.blueAccent,
+        unselectedItemColor: Colors.black45,
+        showUnselectedLabels: true,
+        currentIndex: 0,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.message),label: "Message"),
+          BottomNavigationBarItem(icon: Icon(Icons.call),label: "Call"),
+          BottomNavigationBarItem(icon: Icon(Icons.person),label: "Profile"),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        backgroundColor: Colors.pinkAccent,
-        onPressed: () {
-          MySnackBar("Added Done", context);
-        },
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.trending_up), label: "Trending"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings), label: "Settings"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-        ],
+        child: Icon(Icons.camera_alt_outlined),
+        backgroundColor: Colors.blueAccent,
+        onPressed: (){MySnackBar('Camera is not ready ', context);},
       ),
     );
   }
